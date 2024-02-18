@@ -1,0 +1,46 @@
+def add(x,y):
+    return x+y
+
+def subtract(x,y):
+    return x-y
+
+def multiply(x,y):
+    return x*y
+
+def divide(x,y):
+    return x/y
+
+
+print("enter '+' for ADD")
+print("enter '-' for SUBTRACT")
+print("enter '*' for MULTIPLY")
+print("enter '/' for DIVIDE")
+
+    
+while True:
+    choice=input("enter calculation function: add(+), subtract(-), multiply(*), divide(/): ")
+
+
+    if choice in ("+","add","ADD","-","subtract","SUBTRACT","*","multiply","MULTIPLY","/","divide","DIVIDE"):
+        num1=float(input("enter the first number: "))
+        num2=float(input("enter the second number: "))
+
+        if choice in ("+","add","ADD"):
+            print("Result:",num1,"+",num2,"=",add(num1,num2))
+
+        elif choice in ("-","subtract","SUBTRACT"):
+            print("Result:",num1,"-",num2,"=",subtract(num1,num2))
+
+        elif choice in ("*","multiply","MULTIPLY"):
+            print("Result:",num1,"*",num2,"=",multiply(num1,num2))
+
+        elif choice in ("/","divide","DIVIDE"):
+            print("Result:",num1,"/",num2,"=",divide(num1,num2))
+
+    else :
+        print("please input a correct function")
+        
+    
+    next_calculation=input("Do you want to make another calculation? (y/n?): ")
+    if next_calculation.lower() in ('n','no'):
+        break
