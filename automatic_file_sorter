@@ -1,0 +1,21 @@
+import os, shutil
+
+path = r'C:\Users\Riku\Desktop\analyst_builder\python\project_3\\'
+
+folder_names = ['csv', 'text', 'image', 'tsv']
+
+for folder in folder_names:
+    if not os.path.exists(path + folder):
+        os.makedirs(path + folder)
+
+file_names = os.listdir(path)
+
+for file in file_names:
+    if ".csv" in file and not os.path.exists(path + "csv\\" + file):
+        shutil.move(path+file, path + "csv\\" + file)
+    elif ".png" in file and not os.path.exists(path + "image\\" + file):
+        shutil.move(path+file, path + "image\\" + file)
+    elif ".txt" in file and not os.path.exists(path + "text\\" + file):
+        shutil.move(path+file, path + "text\\" + file)
+    elif ".tsv" in file and not os.path.exists(path + "tsv\\" + file):
+        shutil.move(path+file, path + "tsv\\" + file)
